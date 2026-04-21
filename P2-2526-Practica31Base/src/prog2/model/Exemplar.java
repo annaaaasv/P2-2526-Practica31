@@ -56,4 +56,7 @@ public class Exemplar implements InExemplar{
     public boolean isDisponible(){
         return disponible;
     }
+    public void setDisponible(boolean disponible){
+        this.disponible = disponible;
+    }
 }
