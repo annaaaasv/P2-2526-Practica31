@@ -1,69 +1,100 @@
 package prog2.model;
 
-public class Usuari implements InUsuari{
+public abstract class Usuari implements InUsuari{
+    private String email ;
+    private String nom;
+    private String adreca;
+    private int numPrestecsNormals;
+    private String tipusUsuari;
+    private int numPrestecsLlargs;
+
+    public Usuari(String adreca, String email, String nom, int numPrestecsNormals, int numPrestecsLlargs, String tipusUsuari) {
+        this.adreca = adreca;
+        this.email = email;
+        this.nom = nom;
+        this.numPrestecsNormals = numPrestecsNormals;
+        this.numPrestecsLlargs = numPrestecsLlargs;
+        this.tipusUsuari = tipusUsuari;
+    }
 
     @Override
     public void setEmail(String email) {
+
+        this.email = email;
+
 
     }
 
     @Override
     public String getEmail() {
-        return "";
+
+        return email;
     }
 
     @Override
     public void setNom(String nom) {
 
+        this.nom = nom;
+
     }
 
     @Override
     public String getNom() {
-        return "";
+
+        return nom;
     }
 
     @Override
     public void setAdreca(String adreca) {
 
+        this.adreca = adreca;
     }
 
     @Override
     public String getAdreca() {
-        return "";
+
+        return adreca;
     }
 
     @Override
     public String tipusUsuari() {
-        return "";
-    }
+
+        return tipusUsuari;
+
+    }   // Preguntar anna perque no es getter
 
     @Override
     public void setNumPrestecsNormals(int numPrestecsNormals) {
+
+        this.numPrestecsNormals = numPrestecsNormals;
 
     }
 
     @Override
     public int getNumPrestecsNormals() {
-        return 0;
+
+        return numPrestecsNormals;
+
     }
 
     @Override
-    public void setNumPrestecsLlargs(int numPrestecstLlargs) {
+    public void setNumPrestecsLlargs(int numPrestecsLlargs) {
+
+        this.numPrestecsLlargs = numPrestecsLlargs;
 
     }
 
     @Override
     public int getNumPrestecsLlargs() {
-        return 0;
+
+        return numPrestecsLlargs ;
     }
 
     @Override
-    public int getMaxPrestecsNormals() {
-        return 0;
+    public int getMaxPrestecsNormals() {return 0;
     }
 
     @Override
-    public int getMaxPrestecsLlargs() {
-        return 0;
+    public int getMaxPrestecsLlargs() {return 0;
     }
 }

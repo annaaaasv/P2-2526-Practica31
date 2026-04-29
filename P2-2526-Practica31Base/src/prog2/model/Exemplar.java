@@ -15,48 +15,72 @@ public class Exemplar implements InExemplar{
 
     @Override
     public void setId(String id) {
+
         this.id = id;
     }
 
     @Override
     public String getId() {
+
         return id;
     }
 
     @Override
     public void setTitol(String titol) {
 
+        this.titol = titol;
+
     }
 
     @Override
     public String getTitol() {
-        return "";
+
+        return titol;
     }
 
     @Override
     public void setAutor(String autor) {
 
+        this.autor = autor;
+
     }
 
     @Override
     public String getAutor() {
-        return "";
+
+        return autor;
     }
 
     @Override
     public void setAdmetPrestecLlarg(boolean admetPrestecLlarg) {
 
+        this.admetPrestecLlarg = admetPrestecLlarg;
     }
 
     @Override
     public boolean getAdmetPrestecLlarg() {
+        // return false preguntar a ANNA :)
         return false;
     }
 
     public boolean isDisponible(){
+
         return disponible;
     }
+
     public void setDisponible(boolean disponible){
+
         this.disponible = disponible;
     }
+
+    @Override
+    public String toString(){
+
+        return "id=" + id + ", Titol" + titol + " " +
+                ", Autor = " + autor + ", Admet Prestec Llarg" + admetPrestecLlarg +
+                ", Disponible=" + disponible;
+
+
+    }
 }
+

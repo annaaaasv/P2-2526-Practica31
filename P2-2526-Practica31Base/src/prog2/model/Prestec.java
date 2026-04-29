@@ -3,7 +3,11 @@ package prog2.model;
 import java.util.Date;
 
 public abstract class Prestec implements InPrestec{
-    //atributs
+    private Exemplar exemplar;
+    private Usuari usuari;
+    private Date data;
+    private Date retornat;
+
     @Override
     public void setExemplar(Exemplar exemplar) {
 
