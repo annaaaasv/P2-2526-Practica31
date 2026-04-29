@@ -97,4 +97,18 @@ public abstract class Usuari implements InUsuari{
     @Override
     public int getMaxPrestecsLlargs() {return 0;
     }
+    /* classe to string i aquests dos ultims metodes que despres estan override a estudiant
+    i profesor, to string no ordenat es un problema????*/
+
+    @Override
+    public String toString() {
+        return "Usuari{" +
+                "adreca='" + adreca + '\'' +
+                ", email='" + email + '\'' +
+                ", nom='" + nom + '\'' +
+                ", numPrestecsLlargs=" + numPrestecsLlargs +
+                ", numPrestecsNormals=" + numPrestecsNormals +
+                ", tipusUsuari='" + tipusUsuari + '\'' +
+                '}';
+    }
 }
