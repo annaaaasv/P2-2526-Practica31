@@ -20,7 +20,7 @@ public class Llista<T> implements Serializable {
      * Retornar nombre d'elements continguts a la llista
      */
     public int getSize() {
-          // TO-BE-DONE
+          return 0;
     }
 
     /**
@@ -42,6 +42,7 @@ public class Llista<T> implements Serializable {
      */
     public T getAt(int position) {
           // TO-BE-DONE
+        return null;
     }
 
     /**
@@ -55,7 +56,7 @@ public class Llista<T> implements Serializable {
      * Retornar true si la llista és buida
      */
     public boolean isEmpty() {
-          // TO-BE-DONE
+          return false;
     }
 
     /**
@@ -65,4 +66,5 @@ public class Llista<T> implements Serializable {
         ArrayList<T> arrlist = new ArrayList<>(llista);
         return arrlist;
     }
+
 }

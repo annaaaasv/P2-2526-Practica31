@@ -59,8 +59,8 @@ public class Exemplar implements InExemplar{
 
     @Override
     public boolean getAdmetPrestecLlarg() {
-        // return false preguntar a ANNA :)
-        return false;
+
+        return admetPrestecLlarg;
     }
 
     public boolean isDisponible(){
@@ -76,9 +76,8 @@ public class Exemplar implements InExemplar{
     @Override
     public String toString(){
 
-        return "id=" + id + ", Titol" + titol + " " +
-                ", Autor = " + autor + ", Admet Prestec Llarg" + admetPrestecLlarg +
-                ", Disponible=" + disponible;
+        return "Id= " + id + ", Títol= " + titol + ", Autor= " + autor + ", Admet Préstec Llarg= " + admetPrestecLlarg +
+                ", Disponible= " + disponible;
 
 
     }

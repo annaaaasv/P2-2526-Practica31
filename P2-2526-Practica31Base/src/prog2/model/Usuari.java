@@ -5,16 +5,14 @@ public abstract class Usuari implements InUsuari{
     private String nom;
     private String adreca;
     private int numPrestecsNormals;
-    private String tipusUsuari;
     private int numPrestecsLlargs;
 
-    public Usuari(String adreca, String email, String nom, int numPrestecsNormals, int numPrestecsLlargs, String tipusUsuari) {
+    public Usuari(String email, String nom, String adreca) {
         this.adreca = adreca;
         this.email = email;
         this.nom = nom;
-        this.numPrestecsNormals = numPrestecsNormals;
-        this.numPrestecsLlargs = numPrestecsLlargs;
-        this.tipusUsuari = tipusUsuari;
+        this.numPrestecsNormals = 0;
+        this.numPrestecsLlargs = 0;
     }
 
     @Override
@@ -57,11 +55,7 @@ public abstract class Usuari implements InUsuari{
     }
 
     @Override
-    public String tipusUsuari() {
-
-        return tipusUsuari;
-
-    }   // Preguntar anna perque no es getter
+    public abstract String tipusUsuari();
 
     @Override
     public void setNumPrestecsNormals(int numPrestecsNormals) {
@@ -91,24 +85,15 @@ public abstract class Usuari implements InUsuari{
     }
 
     @Override
-    public int getMaxPrestecsNormals() {return 0;
-    }
+    public abstract int getMaxPrestecsNormals();
 
     @Override
-    public int getMaxPrestecsLlargs() {return 0;
-    }
-    /* classe to string i aquests dos ultims metodes que despres estan override a estudiant
-    i profesor, to string no ordenat es un problema????*/
+    public abstract int getMaxPrestecsLlargs();
 
     @Override
     public String toString() {
-        return "Usuari{" +
-                "adreca='" + adreca + '\'' +
-                ", email='" + email + '\'' +
-                ", nom='" + nom + '\'' +
-                ", numPrestecsLlargs=" + numPrestecsLlargs +
-                ", numPrestecsNormals=" + numPrestecsNormals +
-                ", tipusUsuari='" + tipusUsuari + '\'' +
-                '}';
+        return "Tipus=" + tipusUsuari() + ", Email= " + email + ", Nom= " + nom + ", Adreça= " + adreca +
+                ", Num. préstecs normals= " + numPrestecsNormals + ", Num. préstecs llargs= " + numPrestecsLlargs;
     }
+
 }

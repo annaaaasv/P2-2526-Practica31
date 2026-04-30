@@ -2,30 +2,27 @@ package prog2.model;
 
 public class Estudiant extends Usuari{
 
-    private int maxPrestecsNormals;
-    private int maxPrestecsLlargs;
+    public Estudiant(String email, String nom, String adreca) {
+        super(email, nom, adreca);
 
-    public Estudiant(String adreca, String email, String nom, int numPrestecsNormals, int numPrestecsLlargs, String tipusUsuari, int maxPrestecsLlargs, int maxPrestecsNormals) {
-        super(adreca, email, nom, numPrestecsNormals, numPrestecsLlargs, tipusUsuari);
-        this.maxPrestecsLlargs = maxPrestecsLlargs;
-        this.maxPrestecsNormals = maxPrestecsNormals;
     }
 
     @Override
     public int getMaxPrestecsLlargs() {
-        return maxPrestecsLlargs;
+        return 1;
     }
 
-    public void setMaxPrestecsLlargs(int maxPrestecsLlargs) {
-        this.maxPrestecsLlargs = maxPrestecsLlargs;
+
+
+    @Override
+    public String tipusUsuari() {
+        return "Estudiant";
     }
 
     @Override
     public int getMaxPrestecsNormals() {
-        return maxPrestecsNormals;
+        return 2;
     }
 
-    public void setMaxPrestecsNormals(int maxPrestecsNormals) {
-        this.maxPrestecsNormals = maxPrestecsNormals;
-    }
+
 }

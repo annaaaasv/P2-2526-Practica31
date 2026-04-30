@@ -1,0 +1,14 @@
+package prog2.model;
+
+import java.io.Serializable;
+
+public class LlistaPrestecs extends Llista<Prestec> implements Serializable {
+
+    public LlistaPrestecs(){
+        super();
+    }
+
+    public boolean contains(String id) {
+        return false;
+    }
+}

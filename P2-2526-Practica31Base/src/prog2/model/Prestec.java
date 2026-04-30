@@ -1,20 +1,22 @@
 package prog2.model;
 
+import prog2.vista.BiblioException;
+
 import java.util.Date;
 
 public abstract class Prestec implements InPrestec{
     private Exemplar exemplar;
     private Usuari usuari;
     private Date data;  // data creació
-    private Date dataretorn;  // data de retorn
+    private Date dataRetorn;  // data de retorn
     private boolean retornat;
 
 
-    public Prestec(Exemplar exemplar, Usuari usuari) {
+    public Prestec(Exemplar exemplar, Usuari usuari, Date data) {
         this.exemplar = exemplar;
         this.usuari = usuari;
-        this.data = new Date();
-        this.dataretorn = new Date(data.getTime() + duradaPrestec());
+        this.data = data;
+        this.dataRetorn = new Date(data.getTime() + duradaPrestec());
         this.retornat = false;
     }
 
@@ -44,7 +46,7 @@ public abstract class Prestec implements InPrestec{
     @Override
     public void setDataCreacio(Date data) {
 
-            this.data = data;
+        this.data = data;
     }
 
     @Override
@@ -54,22 +56,20 @@ public abstract class Prestec implements InPrestec{
     }
 
     @Override
-    public void setDataLimitRetorn(Date dataretorn) {
+    public void setDataLimitRetorn(Date dataRetorn) {
 
-        this.dataretorn = dataretorn;
+        this.dataRetorn = dataRetorn;
     }
 
     @Override
     public Date getDataLimitRetorn() {
 
-        return dataretorn;
+        return dataRetorn;
 
     }
 
     @Override
-    public tipusPrestec() {
-        return "";
-    }
+    public abstract String tipusPrestec();
 
     @Override
     public void setRetornat(boolean retornat) {
@@ -85,26 +85,36 @@ public abstract class Prestec implements InPrestec{
     }
 
     /**
-     * Retornar prestec. Llança excepció si el prestec ja es vaig retornar
+     * Retornar prestec. Llança excepció si el prestec ja es va retornar
      */
     @Override
     public void retorna() {
-
+        if(retornat) throw new BiblioException("El préstec ja està retornat");
+        retornat = true;
+        exemplar.setDisponible(true);
+        if(tipusPrestec().equals("Normal")) usuari.setNumPrestecsNormals(usuari.getNumPrestecsNormals() - 1);
+        else if(tipusPrestec().equals("Llarg")) usuari.setNumPrestecsLlargs(usuari.getNumPrestecsLlargs() - 1);
     }
 
     /**
      * Retornar durada prestec. La durada del prestec depen del tipus de prestec
      */
     @Override
-    public long duradaPrestec() {
-        return 0;
-    }
+    public abstract long duradaPrestec();
 
     /**
      * Retornar true si el prestec està endarrerit per a la data actual
      */
     @Override
     public boolean prestecEndarrerit() {
-        return false;
+        if(retornat) return false;
+        Date dataActual = new Date();
+        return dataActual.after(dataRetorn);
+    }
+
+    @Override
+    public String toString(){
+        return "Tipus= " + tipusPrestec() + ", Exemplar= " + exemplar.getTitol() + ", Usuari= " + usuari.getNom() +
+        ", Data de creació= " + data + ", Data límit retorn= " + dataRetorn + "Retornat= " + retornat;
     }
 }

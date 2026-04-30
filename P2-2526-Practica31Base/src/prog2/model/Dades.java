@@ -1,5 +1,7 @@
 package prog2.model;
 
+import prog2.vista.BiblioException;
+
 import java.util.ArrayList;
 
 public class Dades implements InDades{
