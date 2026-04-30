@@ -20,43 +20,42 @@ public class Llista<T> implements Serializable {
      * Retornar nombre d'elements continguts a la llista
      */
     public int getSize() {
-          return 0;
+          return llista.size();
     }
 
     /**
      * Afegir element a la llista. Afegeix l'element t a la llista
      */
     public void afegir(T t) throws BiblioException {
-          // TO-BE-DONE
+          llista.add(t);
     }
 
     /**
      * Esborrar element de la llista. Esborra l'element t a la llista
      */
     public void esborrar(T t) {
-          // TO-BE-DONE
+          llista.remove(t);
     }
 
     /**
      * Retornar element de la llista a la posició position
      */
     public T getAt(int position) {
-          // TO-BE-DONE
-        return null;
+        return llista.get(position);
     }
 
     /**
-     * Buidar tots el elements de la llista
+     * Buidar tots els elements de la llista
      */
     public void clear() {
-          // TO-BE-DONE
+          llista.clear();
     }
 
     /**
      * Retornar true si la llista és buida
      */
     public boolean isEmpty() {
-          return false;
+          return llista.isEmpty();
     }
 
     /**

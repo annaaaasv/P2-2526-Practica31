@@ -8,7 +8,4 @@ public class LlistaPrestecs extends Llista<Prestec> implements Serializable {
         super();
     }
 
-    public boolean contains(String id) {
-        return false;
-    }
 }
