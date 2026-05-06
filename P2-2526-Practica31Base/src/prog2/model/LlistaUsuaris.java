@@ -25,7 +25,7 @@ public class LlistaUsuaris extends Llista<Usuari> implements Serializable {
     }
 
     @Override
-    public void afegir(Usuari u){
+    public void afegir(Usuari u) throws BiblioException{
         if(contains(u.getEmail())){
             throw new BiblioException("Ja existeix un usuari amb aquest email");
         }
