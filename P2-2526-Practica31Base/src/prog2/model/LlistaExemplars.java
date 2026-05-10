@@ -11,6 +11,11 @@ public class LlistaExemplars extends Llista<Exemplar> implements Serializable {
         super();
     }
 
+    /**
+     * Recórre la llista per mirar si conté un element
+     * @param id
+     * @return Retorna true si conté l'element i false si no
+     */
     public boolean contains(String id) {
         Iterator<Exemplar> it = llista.iterator();
         while(it.hasNext()) {
@@ -22,6 +27,10 @@ public class LlistaExemplars extends Llista<Exemplar> implements Serializable {
         return false;
     }
 
+    /**
+     * Afegeix un exemplar a la llista
+     * @param e
+     */
     @Override
     public void afegir(Exemplar e){
         if(contains(e.getId())){

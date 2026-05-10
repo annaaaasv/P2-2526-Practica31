@@ -7,6 +7,13 @@ public class Exemplar implements InExemplar, Serializable {
     private String titol, autor;
     private boolean admetPrestecLlarg, disponible;
 
+    /**
+     * Crea un nou exemplar
+     * @param id
+     * @param titol
+     * @param autor
+     * @param admetPrestecLlarg
+     */
     public Exemplar(String id, String titol, String autor, boolean admetPrestecLlarg){
         this.id = id;
         this.titol = titol;

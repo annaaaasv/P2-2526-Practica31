@@ -12,7 +12,11 @@ public class LlistaUsuaris extends Llista<Usuari> implements Serializable {
         super();
     }
 
-
+    /**
+     * Recórre la llista per mirar si conté un element
+     * @param email
+     * @return Retorna true si conté l'element i false si no
+     */
     public boolean contains(String email) {
         Iterator<Usuari> it = llista.iterator();
         while(it.hasNext()) {
@@ -24,6 +28,11 @@ public class LlistaUsuaris extends Llista<Usuari> implements Serializable {
         return false;
     }
 
+    /**
+     * Afegeix un usuari a la llista
+     * @param u
+     * @throws BiblioException
+     */
     @Override
     public void afegir(Usuari u) throws BiblioException{
         if(contains(u.getEmail())){
