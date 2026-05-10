@@ -78,4 +78,20 @@ public class Adaptador {
         return llista;
     }
 
+    public void afegirExemplar(String id, String titol, String autor, boolean admetLlarg) throws BiblioException {
+        dades.afegirExemplar(id, titol, autor, admetLlarg);
+    }
+
+    public void afegirUsuari(String email, String nom, String adreca, boolean esEstudiant) throws BiblioException {
+        dades.afegirUsuari(email, nom, adreca, esEstudiant);
+    }
+
+    public void afegirPrestec(int exemplarPos, int usuariPos, boolean esLlarg) throws BiblioException {
+        dades.afegirPrestec(exemplarPos, usuariPos, esLlarg);
+    }
+
+    public void retornarPrestec(int prestecPos) throws BiblioException {
+        dades.retornarPrestec(prestecPos);
+    }
+
 }
