@@ -112,6 +112,7 @@ public class Dades implements InDades, Serializable {
      */
     @Override
     public void retornarPrestec(int position) throws BiblioException {
+        if(position > llistaPrestecs.getSize()) throw new BiblioException("No hi ha cap préstec en aquesta posició");
         Prestec prestecARetornar = llistaPrestecs.getAt(position);
         prestecARetornar.retorna();
     }
